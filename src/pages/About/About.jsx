@@ -1,6 +1,6 @@
 import React from 'react';
 import CakeImage1 from '../../CakeImages/About1.png'
-import CakeImage2 from '../../CakeImages/About2.png'
+import CakeImage2 from '../../CakeImages/About2.jpg'
 import AboutBubbles from '../../Bubbles/AboutBubbles.png'
 
 import { 
