@@ -1,17 +1,25 @@
 import React from 'react';
-import { Link } from "react-router-dom";
-import { MenuContainer } from "./Menu.style";
+
+import HeartIcon from '../HeartIcon/HeartIcon';
+import CartIcon from '../CartIcon/CartIcon';
+
+import { 
+    MenuContainer,
+    MenuList,
+    MenuItem
+ } from "./Menu.style";
 
 class Menu extends React.Component{
     render(){
         return (
             <MenuContainer>
-                <nav>
-                    <ul>
-                        <li><Link to="/about">About</Link></li>
-                        <li><Link to="/">Home</Link></li>      
-                    </ul>
-                </nav>
+                <MenuList>
+                    <MenuItem to="/">Home</MenuItem>
+                    <MenuItem to="/about">About</MenuItem>
+                    <MenuItem to="/store">Store</MenuItem>
+                    <MenuItem to="/favorite"> <HeartIcon /> </MenuItem>
+                    <CartIcon />
+                </MenuList> 
             </MenuContainer>
         );
     }

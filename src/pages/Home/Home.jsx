@@ -12,9 +12,8 @@ import {
 const Home = () => (
     <HomeContainer>
         <HomeLayer>
-            <img src="https://i.pinimg.com/564x/8f/a1/c0/8fa1c057eb4f60ea3a1ed3a4f6e6e24d.jpg"></img>  
-            <div>
-                <Menu />
+            <img src="https://i.pinimg.com/564x/8f/a1/c0/8fa1c057eb4f60ea3a1ed3a4f6e6e24d.jpg"></img>             
+            <div>             
                 <div>
                     <h1>FC</h1>
                     <h2>FLOWER CAKE</h2>
@@ -22,6 +21,7 @@ const Home = () => (
             </div>
         </HomeLayer>
         <BubblesLayer>
+            <Menu />
             <img src={HomeBubbles}></img>          
         </BubblesLayer>
     </HomeContainer>

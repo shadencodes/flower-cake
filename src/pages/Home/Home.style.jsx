@@ -4,7 +4,6 @@ const fontColor = '#8C031C';
 
 
 export const HomeContainer = styled.div`
-
 `;
 
 export const HomeLayer = styled.div`
@@ -39,9 +38,10 @@ export const HomeLayer = styled.div`
     }
 `;
 
-export const BubblesLayer = styled.div`
-    position: absolute;
+export const BubblesLayer = styled.div`   
+    width: 100%;
     z-index: 2;
+    position: absolute;      
     top: -20px;
     left: 40px;
 `;
