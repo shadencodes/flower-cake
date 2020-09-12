@@ -1,6 +1,7 @@
 import styled from "styled-components";
 
 import { ReactComponent as HeartFilledSVG } from "../../assets/heart-full.svg";
+import Button from '../Button/Button';
 
 export const ProductContainer = styled.div`
     display: flex;
@@ -14,7 +15,11 @@ export const ProductContainer = styled.div`
     &:hover {
         .favorite-icon {
             display: block;
-        }      
+        }
+        
+        .add-button {
+            display: block;
+        }
     }
 `;
 
@@ -49,6 +54,7 @@ export const HeartFilled = styled(HeartFilledSVG)`
     width: 30px;
     height: 30px;
     display: none;
+    fill: white;
 `;
 
 export const RemoveIcon = styled.div`
@@ -58,5 +64,14 @@ export const RemoveIcon = styled.div`
     cursor: pointer;
     width: 30px;
     height: 30px;
+    display: none;
+`;
+
+
+export const AddButton = styled(Button)`
+    position: absolute;
+    bottom: 110px;
+    width: 80%;
+    height: 50px;
     display: none;
 `;

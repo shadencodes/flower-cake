@@ -11,7 +11,8 @@ import {
     BackgroundImage,
     ProductFooterContainer,
     HeartFilled,
-    RemoveIcon
+    RemoveIcon,
+    AddButton
 } from './Product.style';
 
 class Product extends React.Component{
@@ -26,6 +27,7 @@ class Product extends React.Component{
                     :
                     <RemoveIcon className="favorite-icon" onClick={() => this.props.removeFromFavorite(this.props.product)}> &#10005; </RemoveIcon>
                 }   
+                <AddButton className="add-button" inverted>ADD TO CART</AddButton>
                 <ProductFooterContainer>
                     <h2>{name}</h2>
                     <h3>{price + ".0$"}</h3>
