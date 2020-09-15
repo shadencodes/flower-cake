@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import {
   CartContainer,
@@ -6,11 +7,17 @@ import {
   ItemsCounter
 } from './CartIcon.style';
 
-const CartIcon = ({itemsCount}) => (
+const CartIcon = ({cartItemsCount}) => (
     <CartContainer>
       <ShoppingIcon />
-      <ItemsCounter>{itemsCount}</ItemsCounter>
+      <ItemsCounter>{cartItemsCount}</ItemsCounter>
     </CartContainer>
 );
 
-export default CartIcon;
+const mapStateToProps = (state) => {
+  return {
+    cartItemsCount: state.cart.items.length
+  }
+}
+
+export default connect(mapStateToProps)(CartIcon);

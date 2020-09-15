@@ -16,7 +16,7 @@ const HeartIcon = ({favoritesCount}) => (
 
 const mapStateToProps = (state) => {
   return {
-    favoritesCount: state.items.length
+    favoritesCount: state.favorite.items.length
   }
 }
 

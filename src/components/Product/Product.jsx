@@ -6,6 +6,8 @@ import {
     deleteItemFromFavorite,
   } from "../../redux/Favorites/actions";
 
+import { addToCart } from '../../redux/Cart/actions';
+
 import { 
     ProductContainer,
     BackgroundImage,
@@ -18,7 +20,7 @@ import {
 class Product extends React.Component{
 
     render(){
-        const {name, price, image} = this.props.product.fields;
+        const {name, price, image} = this.props.product;
         return (
             <ProductContainer>            
                 <BackgroundImage src={image.fields.file.url} />
@@ -27,7 +29,7 @@ class Product extends React.Component{
                     :
                     <RemoveIcon className="favorite-icon" onClick={() => this.props.removeFromFavorite(this.props.product)}> &#10005; </RemoveIcon>
                 }   
-                <AddButton className="add-button" inverted>ADD TO CART</AddButton>
+                <AddButton className="add-button" inverted onClick={() => this.props.addToCart(this.props.product)}>ADD TO CART</AddButton>
                 <ProductFooterContainer>
                     <h2>{name}</h2>
                     <h3>{price + ".0$"}</h3>
@@ -39,6 +41,7 @@ class Product extends React.Component{
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        addToCart: (item) => dispatch(addToCart(item)),
         addToFavorite: (item) => dispatch(addItemToFavorite(item)),
         removeFromFavorite: (item) => dispatch(deleteItemFromFavorite(item))
     }

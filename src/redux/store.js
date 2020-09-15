@@ -1,8 +1,8 @@
 import { createStore } from 'redux';
 
-import FavoriteReducer from './Favorites/reducer';
+import { rootReducer } from './root-reducer';
 
-const store = createStore(FavoriteReducer, 
+const store = createStore(rootReducer, 
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 export default store;

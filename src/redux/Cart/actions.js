@@ -1,31 +1,21 @@
-import './actionTypes';
+import CartActionTypes from './actionTypes';
 
-export const addToCart = id => {
+export const addToCart = (item) => {
     return {
-      type: ADD_TO_CART,
-      id
+      type: CartActionTypes.ADD_TO_CART,
+      payload: item
     };
   };
-  export const removeFromCart = id => {
+
+  export const removeFromCart = (item) => {
     return {
-      type: REMOVE_FROM_CART,
-      id,
+      type: CartActionTypes.REMOVE_FROM_CART,
+      payload: item
     };
   };
-  export const subtractQuantity = id => {
-    return {
-      type: SUB_QUANTITY,
-      id,
-    };
-  };
-  export const addQuantity = id => {
-    return {
-      type: ADD_QUANTITY,
-      id,
-    };
-  };
+
   export const emptyCart = () => {
     return {
-      type: EMPTY_CART,
+      type: CartActionTypes.EMPTY_CART,
     };
   };
