@@ -1,7 +1,9 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
 import HeartIcon from '../HeartIcon/HeartIcon';
 import CartIcon from '../CartIcon/CartIcon';
+import Cart from '../Cart/Cart';
 
 import { 
     MenuContainer,
@@ -20,10 +22,18 @@ class Menu extends React.Component{
                     <MenuItem to="/favorite"> <HeartIcon /> </MenuItem>
                     <CartIcon />
                 </MenuList> 
+                {this.props.hideCart ? null : <Cart /> }
             </MenuContainer>
         );
     }
 }
 
-export default Menu;
+const mapStateToProps = (state) => {
+    return {
+      hideCart: state.cart.hidden
+    }
+}
+
+export default connect(mapStateToProps)(Menu);
+
 

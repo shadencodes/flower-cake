@@ -2,11 +2,17 @@ import CartActionTypes from './actionTypes';
 import {addItemToCart, removeItemFromCart} from './utils';
 
 const INITIAL_STATE = {
-    items: []
+    items: [],
+    hidden: true
 }
 
 const CartReducer = (state = INITIAL_STATE, action) => {
     switch(action.type) {
+        case CartActionTypes.SHOW_HIDE_CART:
+            return {
+                ...state,
+                hidden: !state.hidden
+            }
         case CartActionTypes.ADD_TO_CART:
             return {
                 ...state,

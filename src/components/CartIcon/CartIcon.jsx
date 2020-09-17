@@ -1,18 +1,24 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import { showHideCart } from '../../redux/Cart/actions';
+
 import {
   CartContainer,
   ShoppingIcon,
   ItemsCounter
 } from './CartIcon.style';
 
-const CartIcon = ({cartItemsCount}) => (
-    <CartContainer>
+const CartIcon = (props) => (
+    <CartContainer onClick={props.showHideCart}>
       <ShoppingIcon />
-      <ItemsCounter>{cartItemsCount}</ItemsCounter>
+      <ItemsCounter>{props.cartItemsCount}</ItemsCounter>
     </CartContainer>
 );
+
+const mapDispatchToProps = (dispatch) => ({
+  showHideCart: () => dispatch(showHideCart()),
+});
 
 const mapStateToProps = (state) => {
   return {
@@ -20,4 +26,4 @@ const mapStateToProps = (state) => {
   }
 }
 
-export default connect(mapStateToProps)(CartIcon);
+export default connect(mapStateToProps, mapDispatchToProps)(CartIcon);

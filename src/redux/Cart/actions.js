@@ -1,5 +1,9 @@
 import CartActionTypes from './actionTypes';
 
+export const showHideCart = () => ({
+  type: CartActionTypes.SHOW_HIDE_CART
+})
+
 export const addToCart = (item) => {
     return {
       type: CartActionTypes.ADD_TO_CART,

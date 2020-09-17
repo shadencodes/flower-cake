@@ -27,7 +27,7 @@ class Favorites extends React.Component{
 
 const mapStateToProps = (state) => {
     return {
-        favoriteProducts: state.items
+        favoriteProducts: state.favorite.items
     }
 
 }

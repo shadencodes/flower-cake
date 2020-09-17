@@ -10,7 +10,7 @@ class ProductList extends React.Component{
     render(){
         return (
             <ProductListContainer>
-               { this.props.products.map( (product, index) =>  <Product key={index} product={product.fields} storePage={this.props.storePage}/> ) }
+               { this.props.products.map( (product, index) =>  <Product key={index} product={product} storePage={this.props.storePage}/> ) }
             </ProductListContainer>
         );
     }

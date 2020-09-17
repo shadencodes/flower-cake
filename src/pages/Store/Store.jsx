@@ -23,7 +23,7 @@ class Store extends React.Component{
     componentDidMount(){
         client.getEntries().then( response => {
             this.setState({
-                products: response.items
+                products: response.items.map(item => item.fields)
             });
         }).catch(console.error);
     }
