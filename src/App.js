@@ -5,6 +5,7 @@ import Home from './pages/Home/Home';
 import About from './pages/About/About';
 import Store from './pages/Store/Store';
 import Favorites from './pages/Favorites/Favorites'
+import Checkout from './pages/Checkout/Checkout';
 
 import {
   BrowserRouter as Router,
@@ -23,6 +24,7 @@ class App extends React.Component{
               <Route path='/favorite' component={Favorites} />
               <Route path="/store" component={Store} />
               <Route path="/about" component={About} />
+              <Route path="/checkout" component={Checkout} />
             </Switch>
       </Router>
     );

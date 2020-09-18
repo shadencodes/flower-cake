@@ -1,5 +1,8 @@
 import React from 'react';
+import { withRouter } from "react-router-dom";
 import { connect } from 'react-redux';
+
+import { showHideCart } from '../../redux/Cart/actions';
 
 import CartItem from '../CartItem/CartItem';
 import {
@@ -21,7 +24,10 @@ class Cart extends React.Component{
 
                     }
                 </CartItemsContainer>
-                <CheckOutButton>GO TO CHECKOUT</CheckOutButton>
+                <CheckOutButton onClick={() => {
+                                            this.props.history.push("/checkout");
+                                            this.props.showHideCart();
+                                        }}>GO TO CHECKOUT</CheckOutButton>
             </CartContainer>
         );
     }
@@ -34,4 +40,8 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(Cart);
+const mapDispatchToProps = (dispatch) => ({
+    showHideCart: () => dispatch(showHideCart()),
+  });
+
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(Cart));

@@ -4,6 +4,8 @@ const fontColor = '#8C031C';
 
 
 export const HomeContainer = styled.div`
+    width: 100%;
+    height: 100%;
 `;
 
 export const HomeLayer = styled.div`
@@ -39,9 +41,9 @@ export const HomeLayer = styled.div`
 `;
 
 export const BubblesLayer = styled.div`   
-    width: 100%;
+    width: 98%;
     z-index: 2;
     position: absolute;      
-    top: -20px;
+    top: 0px;
     left: 40px;
 `;
