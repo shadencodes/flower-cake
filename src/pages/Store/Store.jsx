@@ -10,10 +10,10 @@ import {
  } from './Store.style';
 
 
-const client = (process.env.REACT_APP_SPACE_ID) ? contentful.createClient({
+/*const client = (process.env.REACT_APP_SPACE_ID) ? contentful.createClient({
     space: process.env.REACT_APP_SPACE_ID,
     accessToken: process.env.REACT_APP_ACCESS_TOKEN
-}) : null;
+}) : null;*/
 
 class Store extends React.Component{
     state = {
@@ -21,6 +21,10 @@ class Store extends React.Component{
     }
 
     componentDidMount(){
+        const client = contentful.createClient({
+            space: process.env.REACT_APP_SPACE_ID,
+            accessToken: process.env.REACT_APP_ACCESS_TOKEN
+        }) 
         client.getEntries().then( response => {
             this.setState({
                 products: response.items.map(item => item.fields)
