@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import Menu from '../../components/Menu/Menu';
 import CheckoutItem from '../../components/CheckoutItem/CheckoutItem';
+import StripeButton from '../../components/StripeButton/StripeButton';
 
 import {
     CheckoutPageContainer,
@@ -11,7 +12,9 @@ import {
     HeaderContainer,
     HeaderTitle,
     ProductsContainer,
-    TotalContainer
+    TotalContainer,
+    WarningContainer,
+    StripeButtonContainer
 } from './Checkout.style';
 
 class Checkout extends React.Component{
@@ -22,6 +25,7 @@ class Checkout extends React.Component{
     }
 
     render(){
+        const totalPrice = this.calculateTotal();
         return (
         <CheckoutPageContainer>
             <Menu />
@@ -36,9 +40,17 @@ class Checkout extends React.Component{
                 </HeaderContainer>
                 <ProductsContainer>
                     { this.props.cartItems.map(cartItem => <CheckoutItem key={cartItem.id} cartItem={cartItem}/>) }
-                </ProductsContainer>
+            </ProductsContainer>
             </ProductsTable>
-            <TotalContainer> <span>TOTAL: {this.calculateTotal()}.0$</span> </TotalContainer>
+            <TotalContainer> <span>TOTAL: {totalPrice}.0$</span> </TotalContainer>
+            <WarningContainer>
+                *Please use the following test credit card for payments*
+                <br />
+                4242 4242 4242 4242 - Exp: 01/21 - CVV: 123
+            </WarningContainer>
+            <StripeButtonContainer>
+             {   <StripeButton price={totalPrice} />  }
+            </StripeButtonContainer>
         </CheckoutPageContainer>
         );
     }

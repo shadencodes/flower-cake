@@ -12,7 +12,7 @@ class CartItem extends React.Component{
         const {name, quantity, price, image} = this.props.item;
         return (
             <CartItemContainer>
-                <CartItemImage  src={image.fields.file.url}/>
+                <CartItemImage  src={image.fields.file.url} alt=""/>
                 <CartItemDetailsContainer>
                     <span>{name}</span>
                     <span> {quantity} x ${price} </span>

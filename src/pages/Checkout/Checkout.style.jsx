@@ -40,3 +40,16 @@ export const TotalContainer = styled.div`
     margin: 30px 200px;
     
 `;
+
+export const WarningContainer = styled.div`
+  text-align: center;
+  margin-top: 40px;
+  font-size: 24px;
+  color: red;
+`;
+
+export const StripeButtonContainer = styled.div`
+    font-size: 30px;
+    text-align: right;
+    margin: 30px 200px;
+`;
