@@ -10,10 +10,10 @@ import {
  } from './Store.style';
 
 
-const client = contentful.createClient({
+const client = (process.env.REACT_APP_SPACE_ID) ? contentful.createClient({
     space: process.env.REACT_APP_SPACE_ID,
     accessToken: process.env.REACT_APP_ACCESS_TOKEN
-})
+}) : null;
 
 class Store extends React.Component{
     state = {
