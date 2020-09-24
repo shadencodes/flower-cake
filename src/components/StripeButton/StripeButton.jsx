@@ -10,7 +10,7 @@ class StripeButton extends React.Component{
     render(){
         return (
             <StripeCheckout
-                stripeKey={process.env.REACT_APP_STRIPE_KEY} 
+                stripeKey='pk_test_51HSiBbJFaxddZnhIfCnMEwmHEGHxl8l44xWuk4LsZ5qcu5hioXv7cdqHje315EBt2ssAkvjlnKylygDwYo392Ehq00fLe3IPZR'
                 token={this.handleToken}
                 panelLabel="Pay Now"
                 name="Flower Cake"
