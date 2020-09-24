@@ -1,5 +1,5 @@
 import React from 'react';
-import * as contentful from 'contentful';
+import { ProductsDatabase } from '../../ProductsDatabase';
 
 import Menu from '../../components/Menu/Menu';
 import ProductList from '../../components/ProductsList/ProductList';
@@ -21,15 +21,9 @@ class Store extends React.Component{
     }
 
     componentDidMount(){
-        const client = contentful.createClient({
-            space: process.env.REACT_APP_SPACE_ID,
-            accessToken: process.env.REACT_APP_ACCESS_TOKEN
-        }) 
-        client.getEntries().then( response => {
-            this.setState({
-                products: response.items.map(item => item.fields)
-            });
-        }).catch(console.error);
+        this.setState({
+            products: ProductsDatabase.products
+        });
     }
 
     render(){

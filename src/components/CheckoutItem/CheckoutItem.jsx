@@ -18,10 +18,10 @@ import {
 
 class CheckoutItem extends React.Component{
     render(){
-        const {name, quantity, price, image} = this.props.cartItem;
+        const {name, quantity, price, imageUrl} = this.props.cartItem;
         return (
             <CheckoutItemContainer>
-                <Image src={image.fields.file.url}/>
+                <Image src={imageUrl}/>
                 <Description>{name}</Description>
                 <QuantityContainer>
                     <div onClick={() => this.props.removeItem(this.props.cartItem)}> &#10094; </div>

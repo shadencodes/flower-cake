@@ -9,10 +9,10 @@ import {
 class CartItem extends React.Component{
 
     render(){
-        const {name, quantity, price, image} = this.props.item;
+        const {name, quantity, price, imageUrl} = this.props.item;
         return (
             <CartItemContainer>
-                <CartItemImage  src={image.fields.file.url} alt=""/>
+                <CartItemImage  src={imageUrl} alt=""/>
                 <CartItemDetailsContainer>
                     <span>{name}</span>
                     <span> {quantity} x ${price} </span>

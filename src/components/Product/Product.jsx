@@ -20,10 +20,10 @@ import {
 class Product extends React.Component{
 
     render(){
-        const {name, price, image} = this.props.product;
+        const {name, price, imageUrl} = this.props.product;
         return (
             <ProductContainer>            
-                <BackgroundImage src={image.fields.file.url} />
+                <BackgroundImage src={imageUrl} />
                 { (this.props.storePage === true) ? 
                     <HeartFilled className="favorite-icon" onClick={() => this.props.addToFavorite(this.props.product)}/>  
                     :
