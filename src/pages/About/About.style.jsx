@@ -3,6 +3,10 @@ import styled from "styled-components";
 
 export const AboutContainer = styled.div`
     display: flex;
+
+    @media (max-width: 800px) {
+        flex-direction: column;
+    }
 `;
 
 export const TextContainer = styled.div`
