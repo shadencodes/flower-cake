@@ -1,31 +1,37 @@
 import React from 'react';
+import { withRouter } from "react-router-dom";
+
 import Menu from '../../components/Menu/Menu';
 import HomeBubbles from '../../Bubbles/HomeBubbles.png'
 
 import { 
     HomeLayer,
-    BubblesLayer,
-    HomeContainer
+    ImagesContainer,
+    HomeContainer,
+    Image,
+    ShopButton
  } from "./Home.style";
 
 
-const Home = () => (
-    <HomeContainer>      
-            <HomeLayer>
-                <img src="https://i.pinimg.com/564x/8f/a1/c0/8fa1c057eb4f60ea3a1ed3a4f6e6e24d.jpg" alt="Flower Cake"></img>             
-                <div>             
-                    <div>
-                        <h1>FC</h1>
-                        <h2>FLOWER CAKE</h2>
-                    </div>
-                </div>
+const Home = (props) => (
+    <HomeContainer>  
+            <Menu />    
+            <HomeLayer>         
+                <div>
+                    <h1>FC</h1>
+                    <h2>FLOWER CAKE</h2>
+                    <ShopButton className="add-button" inverted onClick={() => {props.history.push("/store") }}>Shop FC</ShopButton>  
+                </div>           
+                <ImagesContainer>
+                    <Image src="https://i.ibb.co/WshVyhy/floral-crown.png" alt="Flower Cake"
+                           topOffset="100px" leftOffset="190px" imgWidth="400px" imgHeight="650px" ZIndex="1" />
+                    <Image src="https://i.ibb.co/fQrdYjn/golden-marbel.jpg" alt="Flower Cake"
+                           topOffset="320px" leftOffset="-100px" imgWidth="400px" imgHeight="500px" ZIndex="2" />
+                    <Image src={HomeBubbles} alt="" topOffset="150px" leftOffset="-100px" imgWidth="700px" imgHeight="700px" ZIndex="3"/>         
+                </ImagesContainer>                          
             </HomeLayer>
-            <BubblesLayer>
-                <Menu />
-                <img src={HomeBubbles} alt=""></img>          
-            </BubblesLayer>
     </HomeContainer>
 
 );
 
-export default Home;
+export default withRouter(Home);
