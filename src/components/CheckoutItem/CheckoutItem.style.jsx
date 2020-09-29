@@ -9,10 +9,18 @@ export const CheckoutItemContainer = styled.div`
     border-bottom: 1px solid #888888;
     padding: 15px 0;
     align-items: center;
+
+    @media(max-width: 800px) {
+        font-size: 18px;
+    }
 `;
 
 export const Description = styled.div`
     width: 23%;
+
+    @media (max-width: 800px) {
+        width: 22%;
+    }
 `;
 
 export const QuantityContainer = styled.div`
@@ -32,6 +40,11 @@ export const Image = styled.img`
     width: 18%;
     height: 300px;
     margin-right: 150px;
+
+    @media (max-width: 800px) {
+        width: 25%;
+        margin-right: 10px;
+    }
 `;
 
 export const Price = styled.div`
